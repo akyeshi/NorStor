@@ -1,5 +1,5 @@
 {
-  "name": "mern-infrastructure",
+  "name": "norstor",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -44,5 +44,3 @@
   },
   "proxy": "http://localhost:3001"
 }
-
-
