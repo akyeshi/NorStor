@@ -1,0 +1,27 @@
+-------- app feature design flow: 
+
+React: 
+  • define model, seed data 
+  • define functional component, create states for needed data using react hook i.e. useState
+  • define AJAX/fetch requests in utility modules to CRUD data in the backend 
+
+Express 
+  • define routes matching frontend api request path url 
+  • define controller action/function on the api endpoint that works with DB directly and get the data back to the frontend via res.json(data) 
+
+React: 
+  • resolve async/awaited data from the backend into data 
+  • update data state with 'useState' react hook 
+  • render data into the component 
+      i.e. const getAllPosts = async () => {
+              const allPosts = await postsAPI.getAll();
+              setPosts(allPosts); 
+            }
+
+
+--- 
+1. create the ERD diagram (draw document-level models for data entities and their relationship)
+2. follow the design flow above to get 'products' feature 'getAllProducts' components rendered with data 
+
+
+
