@@ -4,6 +4,21 @@
 const mongoose = require('mongoose'); 
 const Schema = mongoose.Schema; 
 
+
+// Review Schema 
+const reviewSchema = new Schema({
+  user: {
+    type: Schema.Types.ObjectId, 
+    ref: 'User', 
+    required: true 
+  }, 
+  rating: Number, 
+  comment: String 
+}, {
+  timestamps: true
+})
+
+
 // define user schema and add required fields/validation properties on the user schema/model 
 const productSchema = new Schema({
   title: {
