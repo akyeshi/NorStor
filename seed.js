@@ -2,58 +2,56 @@ require('dotenv').config();
 require('./config/database');
 
 const Category = require('./models/category');
-const Item = require('./models/item');
+const Tag = require('./models/tag'); 
+const Product = require('./models/product');
+const data = require('./data'); 
 
 // IIFE
 // Immediately Invoked Function Expression
 (async function() {
   await Category.deleteMany({});
-  const categories = await Category.create([
-    {name: 'Accessories'},
-    {name: 'Art & Collectibles'},
-    {name: 'Baby'},
-    {name: 'Bags & Purses'},
-    {name: 'Books, Movies & Music'},
-    {name: 'Clothing'},
-    {name: 'Craft Supplies & Tools'},
-    {name: 'Electronics & Accessories'},
-    {name: 'Gifts'},
-    {name: 'Home & Living'},
-    {name: 'Jewelry'},
-    {name: 'Paper & Party Supplies'},
-    {name: 'Pet Supplies'},
-    {name: 'Shoes'},
-    {name: 'Toys & Games'},
-    {name: 'Weddings'},
+  const categories = await Category.create(data.category);
+
+  await Tag.deleteMany({}); 
+  const tags = await Tag.create(data.tags)
+
+  await Product.deleteMany({});
+  const products = await Product.create([
+    {
+      title: "Light Pink Red Pearls Beaded Choker Necklace, Red Statement Necklace, Stones Pearls Necklace, Valentines Day Gift, Mom Daughter Gift, Niece", 
+      description: 
+      `
+      The 'rojo' statement necklace features a combination of recycled glass beads, silver beads and natural pearls.
+      ― DETAILS ―
+      • recycled glass beads, sterling silver spheres and natural pearls
+      • sterling silver findings and accents
+      • necklace is 16 inches long + it has an extension of 2 inches
+      • ideal to layer with other necklaces or wear solo
+      • slow made with attention to details in our home studio based in Puerto Rico
+      • each comes with our branded packaging, ready for gift giving and it includes a polishing pad for maintenance
+      `, 
+      price: 120, 
+      stock: 8, 
+      images: 
+      [
+        "https://i.etsystatic.com/8924622/r/il/d66598/4326514702/il_1588xN.4326514702_2tj3.jpg"
+      ], 
+      category: categories[10], 
+      reviews: 
+      [
+        {
+          rating: 5, 
+          comment: "This is the most beautiful delicate necklace I’ve ever owned. The owner did what I asked and was great to work with. Shipping was fast."
+        }
+      ], 
+      tags: [tags[3], tags[8]]
+    }, 
+
   ]);
 
-  await Item.deleteMany({});
-  const items = await Item.create([
-    {name: 'Hamburger', emoji: '🍔', category: categories[0], price: 5.95},
-    {name: 'Turkey Sandwich', emoji: '🥪', category: categories[0], price: 6.95},
-    {name: 'Hot Dog', emoji: '🌭', category: categories[0], price: 3.95},
-    {name: 'Crab Plate', emoji: '🦀', category: categories[1], price: 14.95},
-    {name: 'Fried Shrimp', emoji: '🍤', category: categories[1], price: 13.95},
-    {name: 'Whole Lobster', emoji: '🦞', category: categories[1], price: 25.95},
-    {name: 'Taco', emoji: '🌮', category: categories[2], price: 1.95},
-    {name: 'Burrito', emoji: '🌯', category: categories[2], price: 4.95},
-    {name: 'Pizza Slice', emoji: '🍕', category: categories[3], price: 3.95},
-    {name: 'Spaghetti', emoji: '🍝', category: categories[3], price: 7.95},
-    {name: 'Garlic Bread', emoji: '🍞', category: categories[3], price: 1.95},
-    {name: 'French Fries', emoji: '🍟', category: categories[4], price: 2.95},
-    {name: 'Green Salad', emoji: '🥗', category: categories[4], price: 3.95},
-    {name: 'Ice Cream', emoji: '🍨', category: categories[5], price: 1.95},
-    {name: 'Cup Cake', emoji: '🧁', category: categories[5], price: 0.95},
-    {name: 'Custard', emoji: '🍮', category: categories[5], price: 2.95},
-    {name: 'Strawberry Shortcake', emoji: '🍰', category: categories[5], price: 3.95},
-    {name: 'Milk', emoji: '🥛', category: categories[6], price: 0.95},
-    {name: 'Coffee', emoji: '☕', category: categories[6], price: 0.95},
-    {name: 'Mai Tai', emoji: '🍹', category: categories[6], price: 8.95},
-    {name: 'Beer', emoji: '🍺', category: categories[6], price: 3.95},
-    {name: 'Wine', emoji: '🍷', category: categories[6], price: 7.95},
-  ]);
 
-  console.log(items)
+  console.log(categories); 
+  console.log(products); 
 
   process.exit();
 

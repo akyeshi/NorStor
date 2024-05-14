@@ -10,10 +10,10 @@ const reviewSchema = new Schema({
   user: {
     type: Schema.Types.ObjectId, 
     ref: 'User', 
-    required: true 
   }, 
   rating: Number, 
-  comment: String 
+  comment: String, 
+  reviewImgs: [String], 
 }, {
   timestamps: true
 })
@@ -23,23 +23,23 @@ const reviewSchema = new Schema({
 const productSchema = new Schema({
   title: {
     type: String, 
-    required: true
   }, 
   description: {
     type: String, 
     trim: true,     // Mongoose trim whitespaces before and after the string before saving 
-    required: true 
   }, 
   price: Number, 
-  quantity: Number, 
+  stock: Number, 
   images: [String], 
   category: {
     type: Schema.Types.ObjectId, 
     ref: 'Category', 
-    required: true 
   }, 
   reviews: [reviewSchema], 
-  tags: [String]
+  tags: [{
+    type: Schema.Types.ObjectId, 
+    ref: 'Tag'
+  }]
 }, {
   timestamps: true, 
 }); 
