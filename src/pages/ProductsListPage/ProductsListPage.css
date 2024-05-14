@@ -1,7 +1,9 @@
-
-
 div.products-container {
-  display: grid; 
+  display: grid;
+  /* grid-template-rows: repeat(4, 200px); */
   grid-template-columns: repeat(4, 1fr);
-  
+  grid-gap: 1.5em;
+  /* justify-content: center; */
+  /* align-items: center;
+  height: 100vh;  */
 }

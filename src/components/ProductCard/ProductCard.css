@@ -1,0 +1,23 @@
+.product-item {
+  border: 1px solid red;
+  border-radius: 8px;
+}
+
+.product-item a {
+  text-decoration: none;
+
+}
+
+/* .product-item > a:hover {
+  opacity: 0.7;
+  transform: scale(2.10);
+} */
+
+#item-price {
+  color: red;
+  border: 1px solid red;
+  background: white;
+  border-radius: 8px;
+  padding: 5px;
+  text-decoration: none;
+}

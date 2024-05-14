@@ -3,13 +3,13 @@
 
 
 import { Link } from 'react-router-dom';
+import './ProductCard.css';
 
 export default function ProductCard({ product }) {
   return (
-    <>
+    <div className="product-item">
       <Link to={`/products/${product._id}`} >
         <div
-          className="product"
           style={{
             backgroundImage: `url(${product.images[0]})`,
             backgroundSize: 'cover',
@@ -18,9 +18,11 @@ export default function ProductCard({ product }) {
             width: '20rem',
           }}
         >
+          <span id="item-price">{`$${product.price}`}</span>
+
         </div>
         <p>{product.title}</p>
       </Link>
-    </>
+    </div>
   )
 }
