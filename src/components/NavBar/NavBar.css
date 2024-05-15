@@ -22,3 +22,8 @@ nav a:hover {
   background: red;
   color: white;
 }
+
+
+hr {
+  border: 1px solid black; 
+}

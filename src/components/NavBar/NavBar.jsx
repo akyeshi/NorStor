@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 import * as userService from '../../utilities/users-services';
 import './NavBar.css';
+import Logo from '../Logo/Logo';
+import SearchBar from '../SearchBar/SearchBar';
 // react emits an <a> element to the DOM when <Link> component is used, 
 // react intercepts <a> tag's click event thus preventing an HTTP request being sent to the backend server 
 
@@ -12,18 +14,23 @@ export default function NavBar({ user, setUser }) {
   };
 
   return (
-    <nav>
-      <div style={{position: 'fixed', top: 28, left: 28, color: 'red', fontSize: '20px', fontWeight: 'bold'}}>
-        NORSTOR
-      </div>
-      <Link to="/products">Products</Link>
+    <>
 
-      {user &&
-        <>
-          <span id="welcome-text">(Welcome, {user.name})</span>
-          <Link to="" onClick={handleLogOut} >Log Out</Link>
-        </>
-      }
-    </nav>
+      <nav>
+        <Logo />
+
+        <SearchBar />
+        <Link to="/products">Products</Link>
+
+        {user &&
+          <>
+            <span id="welcome-text">(Welcome, {user.name})</span>
+            <Link to="" onClick={handleLogOut} >Log Out</Link>
+          </>
+        }
+      </nav>
+      <br />
+      <hr />
+    </>
   )
 }
