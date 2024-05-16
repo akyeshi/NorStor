@@ -1,5 +1,38 @@
+
+.container {
+  display: flex; 
+  flex-direction: column;
+}
+
+.top {
+  display: flex; 
+  justify-items: flex-end;
+}
+
+.detail {
+  /* display: flex; 
+  flex-direction: column; */
+
+  width: 50vw;
+}
+
+
+
 div img {
   height: 500px;
   width: 500px;
   border-radius: 8px;
+}
+
+
+
+.item-price {
+  color: red;
+  border: 1px solid red;
+  background: white;
+  border-radius: 8px;
+  padding: 5px;
+  text-decoration: none;
+  margin-right: 280px; 
+  /* top: 300px;  */
 }

@@ -38,7 +38,7 @@ async function login(req, res) {
   try {
     // query for a user based on their email
     const user = await User.findOne({ email: req.body.email }); 
-    console.log('here is the user object logging in: -------- \n', user); 
+    // console.log('here is the user object logging in: -------- \n', user); 
     if (!user) throw new Error(); 
     // verify user password is correct using bcrypt's compare() method
     const match = await bcrypt.compare(req.body.password, user.password); 
@@ -54,8 +54,8 @@ async function login(req, res) {
 function checkToken(req, res) {
   // verify middleware is doing its job 
   // console.log('-------- req --------: ', req); 
-  console.log('-------- req.user -------- \n', req.user); 
-  console.log('-------- req.exp -------- \n', req.exp); 
+  // console.log('-------- req.user -------- \n', req.user); 
+  // console.log('-------- req.exp -------- \n', req.exp); 
   res.json(req.exp); 
 }; 
 

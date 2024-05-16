@@ -6,7 +6,7 @@ import SearchBar from '../SearchBar/SearchBar';
 // react emits an <a> element to the DOM when <Link> component is used, 
 // react intercepts <a> tag's click event thus preventing an HTTP request being sent to the backend server 
 
-export default function NavBar({ user, setUser }) {
+export default function NavBar({ user, setUser, searchText, setSearchText }) {
 
   function handleLogOut() {
     userService.logOut();  // delegate to users-service
@@ -19,12 +19,12 @@ export default function NavBar({ user, setUser }) {
       <nav>
         <Logo />
 
-        <SearchBar />
+        <SearchBar searchText={searchText} setSearchText={setSearchText} />
         <Link to="/products">Products</Link>
 
         {user &&
           <>
-            <span id="welcome-text">(Welcome, {user.name})</span>
+            {/* <span id="welcome-text">(Welcome, {user.name})</span> */}
             <Link to="" onClick={handleLogOut} >Log Out</Link>
           </>
         }
