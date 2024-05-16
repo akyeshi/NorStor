@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import * as userService from '../../utilities/users-services';
 import './NavBar.css';
 import Logo from '../Logo/Logo';
@@ -7,6 +7,9 @@ import SearchBar from '../SearchBar/SearchBar';
 // react intercepts <a> tag's click event thus preventing an HTTP request being sent to the backend server 
 
 export default function NavBar({ user, setUser, searchText, setSearchText }) {
+
+  const location = useLocation();
+  // console.log('location: ', location); 
 
   function handleLogOut() {
     userService.logOut();  // delegate to users-service
@@ -19,7 +22,9 @@ export default function NavBar({ user, setUser, searchText, setSearchText }) {
       <nav>
         <Logo />
 
-        <SearchBar searchText={searchText} setSearchText={setSearchText} />
+        {location.pathname === '/products' &&
+          <SearchBar searchText={searchText} setSearchText={setSearchText} />
+        }
         <Link to="/products">Products</Link>
 
         {user &&

@@ -10,8 +10,9 @@ export default function ProductDetailPage({ products }) {
   // without going to the backend, use 'products' already loaded to the frontend here 
   let { productId } = useParams();
   let product = products.find(product => product._id === productId);
+
+  if (!product) return null; // refresh would bring me back to empty products array
   const releasedDate = new Date(product.updatedAt).toLocaleDateString();
-  
 
 
   return (
@@ -29,7 +30,7 @@ export default function ProductDetailPage({ products }) {
               borderRadius: '8px'
             }}
           >
-          <span className="item-price">{product.price}</span>
+            <span className="item-price">{product.price}</span>
           </div>
         </div>
         <div className="details">
@@ -41,7 +42,7 @@ export default function ProductDetailPage({ products }) {
         </div>
       </div>
 
-      
+
 
 
 
@@ -49,8 +50,8 @@ export default function ProductDetailPage({ products }) {
         <br />
         <hr />Reviews
         <div className="product-reviews">
-            
-            <p>{product.reviews[0].comment}</p>
+
+          <p>{product.reviews[0].comment}</p>
         </div>
 
       </div>

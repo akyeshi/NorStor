@@ -10,7 +10,7 @@ export default function SearchBar({ searchText, setSearchText }) {
     <div className="searchbar-results-wrapper">
       <div className="input-icon-wrapper">
         {/* <FaSearch id='search-icon' /> */}
-        <i id='search-icon' class="fa-solid fa-magnifying-glass"></i>
+        <i id='search-icon' className="fa-solid fa-magnifying-glass"></i>
         <input
           className="search-bar"
           type="text"
