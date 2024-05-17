@@ -48,7 +48,8 @@ Welcome to the NorStor repository. I have always been curious about people creat
 
 ## Features
 
-- Search function: users can filter product listing via search text in the search bar 
+- Product feature: users can see a list of product to shop from
+- Search feature: users can filter product listing via search text in the search bar 
 - Cart feature: users can add product items on cart and change order quantities 
 - Checkout feature: users can mimick checkout of the cart, but here you will see the order history instead of a entering a payment method option 
 
