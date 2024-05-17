@@ -35,8 +35,8 @@ export default function OrderListPage() {
       {cart && cart.lineItems.map(lineItem => 
         <LineItemPage key={lineItem._id} lineItem={lineItem} handleChangeQty={handleChangeQty} />
       )}
-      <h1>order total: {cart && cart.orderTotal.toFixed(2)}</h1>
-      <button onClick={handleCheckOut} >CheckOut</button>
+      <h1 style={{color: 'red'}}>Order Total: ${cart && cart.orderTotal.toFixed(2)}</h1>
+      <button style={{width: '150px'}}  onClick={handleCheckOut} >CheckOut</button>
 
     </main>
   )

@@ -14,14 +14,14 @@ export default function LineItemPage({ lineItem, handleChangeQty }) {
       <div className="qty" >
         {/* {!isPaid && */}
         <button
-          className="btn-xs"
+          className="btn-s"
           onClick={() => handleChangeQty(lineItem.item._id, lineItem.qty - 1)}
         >−</button>
         {/* } */}
         <span>{lineItem.qty}</span>
         {/* {!isPaid && */}
         <button
-          className="btn-xs"
+          className="btn-s"
           onClick={() => handleChangeQty(lineItem.item._id, lineItem.qty + 1)}
         >+</button>
         {/* } */}
