@@ -1,8 +1,6 @@
-import { useState, useEffect } from 'react';
+
 import './SearchBar.css';
-import { FaSearch } from 'react-icons/fa';
-import * as productsAPI from '../../utilities/products-api';
-import SearchResultList from '../SearchResultList/SearchResultList';
+// import { FaSearch } from 'react-icons/fa';
 
 export default function SearchBar({ searchText, setSearchText }) {
 

@@ -1,0 +1,31 @@
+.logo {
+  /* font-family: "Varela Round"; */
+  height: 8vmin;
+  width: 8vmin;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 1px solid black;
+  background: red;
+  color: white;
+  font-size: 2vmin;
+  font-weight: bold;
+  position: absolute;
+  top: 5px;
+  left: 8px;
+  transition: opacity 0.3s ease;
+  /* border: .6vmin solid var(--tan-2);  */
+  opacity: 0.7;
+}
+
+
+.logo:hover {
+  transform: rotate(15deg);
+  opacity: 0.8;
+  cursor: pointer;
+  border: 2px solid teal;
+
+}
+
+;

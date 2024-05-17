@@ -7,6 +7,8 @@ import NavBar from '../../components/NavBar/NavBar';
 import AuthPage from '../AuthPage/AuthPage';
 import ProductsListPage from '../ProductsListPage/ProductsListPage';
 import ProductDetailPage from '../ProductDetailPage/ProductDetailPage';
+import OrderListPage from '../OrderListPage/OrderListPage';
+import OrderHistoryPage from '../OrderHistoryPage/OrderHistoryPage';
 import * as productsAPI from '../../utilities/products-api';
 
 
@@ -33,6 +35,8 @@ export default function App() {
           <Routes>
             <Route path="/products" element={<ProductsListPage products={products} searchText={searchText} />} />
             <Route path="/products/:productId" element={<ProductDetailPage products={products} setProducts={setProducts} />} />
+            <Route path="/cart"   element={<OrderListPage />} />
+            <Route path="/orders"   element={<OrderHistoryPage />} />
             <Route path="/*" element={<Navigate to="/products" />} />
           </Routes>
         </>

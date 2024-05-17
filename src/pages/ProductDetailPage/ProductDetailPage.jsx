@@ -1,12 +1,13 @@
 
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import './ProductDetailPage.css';
-
+import * as ordersAPI from '../../utilities/orders-api'; 
 
 
 // this is a hacky way to get product detail without a proper backend route to get that detail 
 export default function ProductDetailPage({ products }) {
 
+  const navigate = useNavigate(); 
   // without going to the backend, use 'products' already loaded to the frontend here 
   let { productId } = useParams();
   let product = products.find(product => product._id === productId);
@@ -14,6 +15,10 @@ export default function ProductDetailPage({ products }) {
   if (!product) return null; // refresh would bring me back to empty products array
   const releasedDate = new Date(product.updatedAt).toLocaleDateString();
 
+  async function handleAddToCart() {
+    await ordersAPI.addItemToCart(product); 
+    navigate('/cart'); 
+  }
 
   return (
     <div className="container">
@@ -38,7 +43,7 @@ export default function ProductDetailPage({ products }) {
           <p>Released: {releasedDate}</p>
           <p>Description: {product.description}</p>
           <button>Buy Item</button>
-          <button>Add To Cart</button>
+          <button onClick={handleAddToCart} >Add To Cart</button>
         </div>
       </div>
 

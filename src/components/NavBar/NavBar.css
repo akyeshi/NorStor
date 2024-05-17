@@ -3,27 +3,38 @@ nav {
   justify-content: flex-end;
   gap: 20px;
 
+
 }
 
 #welcome-text {
-  position: fixed;
-  top: 30px;
-  left: 135px;
+  color: red;
+  position: absolute;
+  top: 55px;
+  left: 80px;
+  font-size: 15px; 
 }
 
 nav a {
+  color: white; 
+  background-color: red;
   text-decoration: none;
   border: 1px solid red;
-  border-radius: 8px;
-  padding: 5px;
+  border-radius: 10px;
+  padding: 8px;
+  font-weight: bolder;
+  height: 40px; 
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  /* font-weight: 800; */
 }
 
 nav a:hover {
-  background: red;
+  background: blue;
   color: white;
 }
 
 
 hr {
-  border: 1px solid black; 
+  border: 1px solid red; 
 }

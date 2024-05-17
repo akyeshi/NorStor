@@ -1,9 +1,13 @@
-
+import { useNavigate } from 'react-router-dom'; 
+import './Logo.css'; 
 
 export default function Logo() {
+
+  const navigate = useNavigate(); 
+
   return (
-    <div style={{ position: 'fixed', top: 28, left: 28, color: 'red', fontSize: '20px', fontWeight: 'bold' }}>
-          NORSTOR
+    <div className="logo" onClick={() => navigate('/products')}>
+          Norstor
     </div>
   )
 }

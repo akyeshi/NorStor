@@ -20,6 +20,7 @@ export default function NavBar({ user, setUser, searchText, setSearchText }) {
     <>
 
       <nav>
+        {/* <Link to={'/products'} ><Logo /></Link> */}
         <Logo />
 
         {location.pathname === '/products' &&
@@ -29,7 +30,10 @@ export default function NavBar({ user, setUser, searchText, setSearchText }) {
 
         {user &&
           <>
-            {/* <span id="welcome-text">(Welcome, {user.name})</span> */}
+            {location.pathname === '/products' &&
+              <span id="welcome-text">&nbsp;&nbsp; Welcome, {user.name}</span>
+            }
+            <Link to="/cart"><i class="fa-solid fa-cart-shopping"></i></Link>
             <Link to="" onClick={handleLogOut} >Log Out</Link>
           </>
         }
