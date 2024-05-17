@@ -11,7 +11,7 @@
 
 ## Introduction
 
-Welcome to the NorStor repository! I have always been curious about people creating online business through i.e. Amazon, Shopify, Etsy etc. Never thought that I would be able to build a small one learning MERN stack (a tech-stack including MongoDB database, Express framework, React library, NodJs backend language). Here we are, I have started on this journey, and of course there is a lot ahead, but the starting has been fun. Hope you enjoyed visiting here 😀!
+Welcome to the NorStor repository. I have always been curious about people creating online business through i.e. Amazon, Shopify, Etsy etc. Never thought that I would be able to build a small one learning MERN stack (a tech-stack including MongoDB database, Express framework, React library, NodJs backend language). Here we are, I have started on this journey, and of course there is a lot ahead, but the starting has been fun. Hope you enjoyed visiting here 😀!
 
 ## Wireframe & ERD (Entity Relationship Diagram)
 ![!Alt Entity Relationship Diagram](public/images/ERD.png)
