@@ -1,5 +1,5 @@
 
-
+import './LineItemPage.css'; 
 
 export default function LineItemPage({ lineItem, handleChangeQty }) {
 
@@ -9,7 +9,7 @@ export default function LineItemPage({ lineItem, handleChangeQty }) {
       <div className="flex-ctr-ctr">{lineItem.item.title}</div>
       <div className="flex-ctr-ctr flex-col">
         {/* <span className="align-ctr">{lineItem.item.stock}</span> */}
-        <span>{lineItem.item.price.toFixed(2)}</span>
+        <span>Price: ${lineItem.item.price.toFixed(2)}</span>
       </div>
       <div className="qty" >
         {/* {!isPaid && */}
@@ -26,7 +26,7 @@ export default function LineItemPage({ lineItem, handleChangeQty }) {
         >+</button>
         {/* } */}
       </div>
-      <div className="ext-price">${lineItem.extPrice.toFixed(2)}</div>
+      <div className="ext-price">Total: ${lineItem.extPrice.toFixed(2)}</div>
     </div>
   )
 }
