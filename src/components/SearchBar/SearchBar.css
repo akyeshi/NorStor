@@ -2,7 +2,8 @@
   display: flex;
   flex-direction: column;
   margin: auto;
-  font-family: 'Varela Round'
+  font-family: 'Varela Round';
+  width: 55vw;
 }
 
 /* .search-bar {
@@ -20,7 +21,7 @@
 
 .input-icon-wrapper {
   background: white;
-  width: 40vw;
+  width: 100%;
   border-radius: 10px;
   border: 1px solid rgba(128, 128, 128, 0.5);
   height: 2.5rem;
@@ -28,7 +29,7 @@
   box-shadow: 0px 0px 8px #ddd;
   display: flex;
   align-items: center;
-  margin: auto; 
+  margin: auto;
 }
 
 input {
