@@ -80,13 +80,13 @@ export default class SignUpForm extends Component {
         <div className="form-container">
           <form autoComplete="off" onSubmit={this.handleSubmit}>
             <label>Name</label>
-            <input style={{border: '1px solid grey'}} type="text" name="name" value={this.state.name} onChange={this.handleChange} required />
+            <input style={{border: '1px solid red'}} type="text" name="name" value={this.state.name} onChange={this.handleChange} required />
             <label>Email</label>
-            <input style={{border: '1px solid grey'}} type="email" name="email" value={this.state.email} onChange={this.handleChange} required />
+            <input style={{border: '1px solid red'}} type="email" name="email" value={this.state.email} onChange={this.handleChange} required />
             <label>Password</label>
-            <input style={{border: '1px solid grey'}} type="password" name="password" value={this.state.password} onChange={this.handleChange} required />
+            <input style={{border: '1px solid red'}} type="password" name="password" value={this.state.password} onChange={this.handleChange} required />
             <label>Confirm</label>
-            <input style={{border: '1px solid grey'}} type="password" name="confirm" value={this.state.confirm} onChange={this.handleChange} required />
+            <input style={{border: '1px solid red'}} type="password" name="confirm" value={this.state.confirm} onChange={this.handleChange} required />
             <button type="submit" disabled={disable}>SIGN UP</button>
           </form>
         </div>

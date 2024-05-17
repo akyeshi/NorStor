@@ -23,7 +23,7 @@ export default function NavBar({ user, setUser, searchText, setSearchText }) {
         {/* <Link to={'/products'} ><Logo /></Link> */}
         <Logo />
 
-        {location.pathname === '/products' &&
+        {user && location.pathname === '/products' &&
           <SearchBar searchText={searchText} setSearchText={setSearchText} />
         }
         <Link to="/products">Products</Link>
