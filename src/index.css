@@ -84,9 +84,11 @@ code {
 
 .form-container {
   padding: 3vmin;
-  background-color: var(--tan-1);
-  border: .1vmin solid var(--tan-3);
+  background-color: white;
+  border: .1vmin solid red;
   border-radius: 1vmin;
+  width: 50vw;
+  margin: auto;
 }
 
 p.error-message {
@@ -105,21 +107,23 @@ label {
   font-size: 2vmin;
   display: flex;
   align-items: center;
+  color: red;
 }
 
 input {
   padding: 1vmin;
   font-size: 2vmin;
-  border: .1vmin solid var(--tan-3);
+  border: 1px solid red;
   border-radius: .5vmin;
-  color: var(--text-dark);
+  /* color: var(--text-dark); */
   background-image: none !important;
   /* prevent lastpass */
-  outline: none;
+  /* outline: none; */
+  font-family: "Varela Round";
 }
 
 input:focus {
-  border-color: var(--orange);
+  border-color: red;
 }
 
 button,
@@ -127,7 +131,7 @@ a.button {
   margin: 1vmin;
   padding: 1vmin;
   color: var(--white);
-  background-color: var(--orange);
+  background-color: red;
   font-size: 2vmin;
   font-weight: bold;
   text-decoration: none;
@@ -151,7 +155,7 @@ button.btn-xs {
 button:disabled,
 form:invalid button[type="submit"] {
   cursor: not-allowed;
-  background-color: var(--tan-4);
+  background-color: red;
 }
 
 button[type="submit"] {

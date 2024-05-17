@@ -32,6 +32,7 @@ export default function LoginForm({ setUser }) {
         <form autoComplete='off' onSubmit={handleSubmit} >
           <label>Email</label>
           <input
+            style={{border: '1px solid grey'}} 
             type="text"
             name="email"
             value={credentials.email}
@@ -40,6 +41,7 @@ export default function LoginForm({ setUser }) {
           />
           <label>Password</label>
           <input
+            style={{border: '1px solid grey'}} 
             type="password"
             name="password"
             value={credentials.password}
